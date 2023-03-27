@@ -1,4 +1,4 @@
-//React 84 - vypisujeme filmy do stránky
+//React 85 - tlačítka do stránky 
 
 import { useState } from "react"
 import allMovies from "./data"
@@ -15,12 +15,21 @@ const App = () => {
   console.log(vysledneFilmy)
 
   return <div>
-      <div>    
+    <div>
+      {
+        categories.map( (oneCategory, index) => {
+          return  <button key={index} onClick={() => setTypeOfMovie(oneCategory)}>
+                      {oneCategory}
+                  </button>
+        })
+      }
+    </div>
+      <div>     
       {
           vysledneFilmy.map( (oneMovie) => {
             const {id, image, title, age, tags, description} = oneMovie
 
-            return <div>
+            return <div key={id}>
               <img src={image} alt="" />
               <h2>{title}</h2>
               <p>{age}</p>

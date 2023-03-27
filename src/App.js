@@ -1,4 +1,4 @@
-//React 86 - štýlovanie aplikácie
+//React 87 - výhoda komponent a rozšírovanie
 
 import { useState } from "react"
 import allMovies from "./data"
